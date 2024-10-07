@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Provider } from "react-redux";
 import { Navigate, Route, Routes } from "react-router";
 import HomePage from "./pages/home/HomePage";
@@ -6,8 +7,7 @@ import store from "./store";
 import { initSearchData } from "./utils/searchData";
 
 // initSearchData();
-
-function App() {
+const App = memo(function App() {
   return (
     // <HomePage />
     <Provider store={store}>
@@ -18,6 +18,5 @@ function App() {
       </Routes>
     </Provider>
   );
-}
-
+});
 export default App;
